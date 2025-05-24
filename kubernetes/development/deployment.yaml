@@ -24,8 +24,8 @@ spec:
         - containerPort: 3000
           name: http
           protocol: TCP
-      imagePullSecrets:
-      - name: regcred
         envFrom:
         - secretRef:
             name: mongo-db-creds
+      imagePullSecrets:
+      - name: regcred
