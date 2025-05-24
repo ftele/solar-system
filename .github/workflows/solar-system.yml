@@ -36,9 +36,12 @@ jobs:
           run: npm install
     
         - name: Unit Testing
+          id: nodejs-unit-testing-step
           run: npm test
           
         - name: Archive Test Result
+        ## Garantizas que este step siempre corra falle o no el step anterior y asi ver el reporte
+          if: always()
           uses: actions/upload-artifact@v4
           with:
             name: Test-Result-Report
